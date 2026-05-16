@@ -30,34 +30,34 @@
 
 ---
 
-## Getting started
+## Інструкція із запуску
 
+### Попередні вимоги
+* Встановлений [Docker](https://docs.docker.com/get-docker/) та [Docker Compose](https://docs.docker.com/compose/install/)
 
-```bash
-docker compose up
+### Запуск брокера
+1. Перейдіть у директорію `broker`:
+   ```bash
+   cd broker
+   ```
+2. Запустіть сервіс:
+   ```bash
+   docker compose up -d
+   ```
+
+Після запуску брокер буде доступний за наступними портами:
+* `1883` — MQTT (TCP)
+* `9001` — MQTT (WebSockets)
+
+## Структура проєкту
 
 ```
-
+├── broker
+│   ├── mosquitto.conf     # Конфігурація MQTT
+│   └── docker-compose.yml # Опис сервісу в Docker
+├── screenshots            # Скріншоти роботи
+├── .editorconfig
+├── .gitignore
+└── README.md
 ```
-├── stt-pz-3
-│   ├── broker
-│   │   ├── <mqtt>.conf     # конфігурація MQTT (якщо застосовується)
-│   │   ├── docker-compose.yml # варіант розгортання брокера
-│   ├── screenshots            # докази роботи Publish/Subscribe або Gateway routes
-│   ├── .editorconfig
-│   ├── .gitignore
-│   ├── README.md
-└──
 
-```
-## Usfull links
-
-[MQTT Essentials](https://www.hivemq.com/mqtt-essentials/)
-
-[EMQX Documentation](https://www.emqx.io/docs/en/latest/)
-
-[Eclipse Mosquitto](https://mosquitto.org/)
-
-[MQTT with Postman](https://learning.postman.com/docs/sending-mqtt-messages/intro-to-mqtt/)
-
-[NGINX API Gateway](https://docs.nginx.com/nginx/admin-guide/api-gateway/)
